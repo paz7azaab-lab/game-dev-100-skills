@@ -29,7 +29,7 @@ Selected skill areas guide concrete decisions and checks; they are not plugins i
 
 ## Verification
 - [Run 39151090456](https://github.com/paz7azaab-lab/shadows-of-the-lost-world/actions/runs/39151090456) succeeded for commit 267950572245ca95543f4cbb277b872caa064188: Godot 4.4.1 headless import/script parse and main-scene smoke launch both exited successfully.
-- The smoke log showed a HUD anchor/size warning. Fix committed as b66cb329429a4dfc5c4585ee93ff8524a95d559b. [Run 39151156526](https://github.com/paz7azaab-lab/shadows-of-the-lost-world/actions/runs/39151156526) was queued at last check; re-check it before marking the fix validated.
+- The smoke log showed a HUD anchor/size warning. Fix committed as b66cb329429a4dfc5c4585ee93ff8524a95d559b. [Run 39151156526](https://github.com/paz7azaab-lab/shadows-of-the-lost-world/actions/runs/39151156526) completed successfully; Godot import/script parsing and headless main-scene smoke launch passed on the HUD-fix commit.
 - Not verified: physical phone input, actual rendered visual quality, performance, Android export, or APK installation.
 - Built artifact: none. APK: none. Phone runtime test: no.
 - Current visuals are primitive generated meshes, not polished final art.
