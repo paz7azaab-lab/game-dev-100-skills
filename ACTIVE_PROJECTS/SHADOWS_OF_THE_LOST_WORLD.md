@@ -4,7 +4,8 @@
 - Status: in progress
 - Game repository: [paz7azaab-lab/shadows-of-the-lost-world](https://github.com/paz7azaab-lab/shadows-of-the-lost-world), branch `main`
 - Framework repository: [paz7azaab-lab/game-dev-100-skills](https://github.com/paz7azaab-lab/game-dev-100-skills), branch `main`
-- Goal: build a polished third-person 3D exploration/survival adventure for Android in Godot 4, in staged, evidence-backed milestones.
+- Chosen direction: third-person 3D open-world survival adventure with exploration, resource gathering, base-building progression and RPG elements. Build single-player core first; consider online co-op only after the offline game is stable.
+- Target: polished, high-quality Android game built in stages with evidence-backed milestones.
 - Protected scope: only edit the dedicated Shadows repo for game code; do not alter the older game repository. Do not claim a working game or APK without runtime/build evidence.
 
 ## Skill framework use
@@ -17,31 +18,31 @@ The selected skill areas below guide concrete decisions and checks; they are not
 - Monetization/security/privacy: 98, 99, 100.
 
 ## Current implementation
-Game source is in the dedicated game repository:
 - [project.godot](https://github.com/paz7azaab-lab/shadows-of-the-lost-world/blob/main/project.godot) — Godot 4 configuration, landscape-first viewport, GL Compatibility renderer.
-- [scenes/main.tscn](https://github.com/paz7azaab-lab/shadows-of-the-lost-world/blob/main/scenes/main.tscn) — connects player, generated forest, ruin area, touch controls, and three shard pickups.
+- [scenes/main.tscn](https://github.com/paz7azaab-lab/shadows-of-the-lost-world/blob/main/scenes/main.tscn) — player, generated forest, ruin landmark, touch controls, three shard pickups.
 - [scripts/player_controller.gd](https://github.com/paz7azaab-lab/shadows-of-the-lost-world/blob/main/scripts/player_controller.gd) — third-person movement foundation.
-- [scripts/forest_generator.gd](https://github.com/paz7azaab-lab/shadows-of-the-lost-world/blob/main/scripts/forest_generator.gd) — primitive procedural trees, trunk collision, rocks, ruin/altar landmark.
-- [scripts/mobile_controls.gd](https://github.com/paz7azaab-lab/shadows-of-the-lost-world/blob/main/scripts/mobile_controls.gd) — touch directional buttons and interact button; E key mapping.
-- [scripts/world_controller.gd](https://github.com/paz7azaab-lab/shadows-of-the-lost-world/blob/main/scripts/world_controller.gd) — HUD and three-shard exploration objective; nearby shard collection updates objective progress.
-- [scripts/relic_pickup.gd](https://github.com/paz7azaab-lab/shadows-of-the-lost-world/blob/main/scripts/relic_pickup.gd) — reusable pickup component/group registration.
+- [scripts/forest_generator.gd](https://github.com/paz7azaab-lab/shadows-of-the-lost-world/blob/main/scripts/forest_generator.gd) — primitive procedural trees, trunk collision, rocks and ruins.
+- [scripts/mobile_controls.gd](https://github.com/paz7azaab-lab/shadows-of-the-lost-world/blob/main/scripts/mobile_controls.gd) — touch directional buttons and interact input.
+- [scripts/relic_pickup.gd](https://github.com/paz7azaab-lab/shadows-of-the-lost-world/blob/main/scripts/relic_pickup.gd) — pickup group registration.
+- [scripts/world_controller.gd](https://github.com/paz7azaab-lab/shadows-of-the-lost-world/commit/267950572245ca95543f4cbb277b872caa064188) — health/hunger state, wood and stone gathering, survival HUD, and one-time campfire crafting that restores hunger.
 
 ## Latest milestone and evidence
-- Confirmed GitHub writes: [relic_pickup.gd](https://github.com/paz7azaab-lab/shadows-of-the-lost-world/commit/9760aa5b4ed9373c28ee0e96aa9d14ffc078fc29), [world_controller.gd](https://github.com/paz7azaab-lab/shadows-of-the-lost-world/commit/b0ee22ef4bf6d11d71de32b718df9cc0507f80c3), [main.tscn](https://github.com/paz7azaab-lab/shadows-of-the-lost-world/commit/adbabee11ed9aefb97b1221ad6ca46bc8663b4dd).
-- Fresh static audit fetched seven files from `main`: project config, main scene, player controller, forest generator, mobile controls, world controller, and pickup script.
-- Static checks passed: configured main-scene path; every script path referenced by the scene exists; all three shard nodes exist and use the pickup script; objective counts to three; pickup group name matches; movement/interact controls are present.
-- Not verified: GDScript parsing, Godot scene launch, real gameplay, touch on an actual phone, performance, Android export, or APK installation. The local environment previously had no `godot` or `godot4` executable.
-- Built artifact: none. APK: none. Runtime-verified: no.
-- Current art uses generated primitive meshes; this is a playable-design prototype target, not yet a polished finished game.
+- Commit: [267950572245ca95543f4cbb277b872caa064188](https://github.com/paz7azaab-lab/shadows-of-the-lost-world/commit/267950572245ca95543f4cbb277b872caa064188).
+- Fresh source fetch of `scripts/world_controller.gd` confirmed the committed content.
+- Static review indicates the intended survival state, HUD, gatherable objects and campfire crafting paths are present.
+- GitHub Actions validation run [39151090456](https://github.com/paz7azaab-lab/shadows-of-the-lost-world/actions/runs/39151090456) was still in progress at last check. Do not call this commit runtime-tested until the run concludes and logs are reviewed.
+- Earlier run [39142756702](https://github.com/paz7azaab-lab/shadows-of-the-lost-world/actions/runs/39142756702) succeeded on the workflow setup commit, not on the current survival commit.
+- Not yet verified: Godot parsing for the latest commit, scene launch, actual gameplay, touch on a physical phone, performance, Android export or APK installation.
+- Built artifact: none. APK: none. Runtime-verified on phone: no.
+- Visuals remain mostly primitive generated meshes; quality-art pass remains ahead.
 
 ## Next milestones
-1. Obtain access to a Godot 4 runtime and run import/parser/scene checks; fix any actual errors.
-2. Add survival state and more interactions only after the current scene parses and runs.
-3. Add animation, audio, higher-quality environment assets, responsive touch testing, and save/load.
-4. Add security/privacy, performance, regression, and Android packaging checks before release claims.
+1. Inspect run 39151090456 and its logs after completion; fix concrete parse/runtime errors before adding more systems.
+2. Verify resource gathering, hunger/health progression, campfire crafting and all three shard pickups.
+3. Add food and healing, save/load, enemies/combat, and proper placeable base structures in separate testable milestones.
+4. Improve character, environment, animation, lighting and audio with mobile performance constraints.
+5. Consider online co-op only after the single-player loop, persistence and stability are proven.
+6. Build and test Android APK when automated engine checks pass and a reproducible export setup is available.
 
-
-## Automated Godot validation path
-- Added [.github/workflows/godot-validation.yml](https://github.com/paz7azaab-lab/shadows-of-the-lost-world/blob/main/.github/workflows/godot-validation.yml) in commit 57f80112166f3ad0b0726161f66bdc7eacb6cdb8.
-- It is configured to download Godot 4.4.1 in GitHub Actions, run headless editor import/script parsing, start the main scene for a short headless smoke test, and upload diagnostic logs.
-- Status is pending/not verified: no commit status checks were returned during this inspection. The workflow configuration is committed, but its successful execution has not been established.
+## Release discipline
+A source commit, static review, CI pass, Android build, APK inspection, and physical-device runtime test are different evidence levels. Report each separately. No revenue or commercial success is guaranteed.
