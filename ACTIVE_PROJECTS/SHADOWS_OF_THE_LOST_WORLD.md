@@ -44,3 +44,12 @@ Selected skill areas guide concrete decisions and checks; they are not plugins i
 
 ## Release discipline
 A source commit, CI pass, Android build, APK inspection, and physical-device runtime test are different evidence levels. Report each separately. No revenue or commercial success is guaranteed.
+
+
+## Mandatory 100-skill operating rule (user requirement, 2026-10-18)
+For every meaningful project phase and feature, consult the complete `GAME_SKILLS_INDEX.md` (all 100 areas), not only the initially selected list. Create/update a per-milestone skill matrix that records each area as `planned`, `in progress`, `passed`, `failed`, `blocked`, or `not applicable`, with a short reason and evidence/check where relevant. Apply every relevant skill area to real decisions and implementation; include cross-cutting mobile, performance, test, security/privacy, and commercial-readiness reviews whenever applicable.
+
+Important integrity rule: reviewing all 100 is mandatory, but it is not truthful to claim that all 100 were actively executed or passed for every change. Areas that do not apply to the current milestone must be marked `not applicable` with a reason; unverified areas remain `planned` or `blocked`. The skill matrix is a workflow requirement, not a claim that 100 separate tools/plugins are installed.
+
+## Current browser-alpha branch note
+A browser-based Three.js alpha has been added at `index.html` to satisfy the user's instruction to avoid Godot for the playable version. GitHub Actions browser tests have passed on earlier commits; later documentation/workflow commits triggered fresh runs that must be checked separately. GitHub Pages deployment is not confirmed; a deployment attempt failed because repository Pages setup/permissions were unavailable. Do not claim a public live URL until a deployment run succeeds. The legacy Godot source still exists in this repository, but it is not needed to run the browser alpha.
