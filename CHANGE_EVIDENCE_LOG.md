@@ -18,7 +18,7 @@ Record changes only after GitHub confirms them. A source commit is not proof of 
 ### Verification evidence
 - Freshly fetched `scripts/world_controller.gd` from `main`; confirmed the HUD sizing line was removed in the latest commit.
 - GitHub Actions [run 39151090456](https://github.com/paz7azaab-lab/shadows-of-the-lost-world/actions/runs/39151090456) succeeded on commit 267950572245ca95543f4cbb277b872caa064188. Godot 4.4.1 headless import/script parsing and main-scene smoke launch completed successfully.
-- The smoke log showed a UI anchor/size warning. The follow-up fix is commit b66cb329429a4dfc5c4585ee93ff8524a95d559b; its new run [39151156526](https://github.com/paz7azaab-lab/shadows-of-the-lost-world/actions/runs/39151156526) was queued at the last check and is not yet a pass.
+- The smoke log showed a UI anchor/size warning. The follow-up fix is commit b66cb329429a4dfc5c4585ee93ff8524a95d559b; its new run [39151156526](https://github.com/paz7azaab-lab/shadows-of-the-lost-world/actions/runs/39151156526) completed successfully. Godot 4.4.1 import/script parsing and the headless main-scene smoke launch passed on the HUD-fix commit.
 - No APK has been built, no physical-device gameplay has been tested, and polished final art is not yet present.
 
 ## Evidence rules
