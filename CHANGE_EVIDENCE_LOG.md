@@ -27,3 +27,9 @@ Record changes only after GitHub confirms them. A source commit is not proof of 
 - A commit proves a change was committed, not that it works.
 - Never record a test that was not run as passed.
 - Keep secrets and private player data out of logs.
+
+
+### Mandatory all-100 review rule
+- User instruction dated 2026-10-18: consult the full 100-skill index across every meaningful project phase, create/update a milestone matrix, apply relevant areas to real work, and record evidence/statuses.
+- Integrity constraint: never claim all 100 were executed/passed merely because they were reviewed. Use `not applicable` with a reason where appropriate and preserve planned/blocked/failed states.
+- Browser-alpha delivery status: source and browser tests exist in the dedicated game repo; a public Pages deployment is not confirmed and must remain unclaimed until GitHub Actions provides success evidence.
