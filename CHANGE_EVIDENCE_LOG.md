@@ -49,3 +49,10 @@ Record changes only after GitHub confirms them. A source commit is not proof of 
 - A commit proves that a change was committed, not that it works.
 - Never record a test that was not run as passed.
 - Keep secrets and private player data out of logs.
+
+
+## CI capability added — 2026-10-18
+- Game repo workflow: [.github/workflows/godot-validation.yml](https://github.com/paz7azaab-lab/shadows-of-the-lost-world/blob/main/.github/workflows/godot-validation.yml)
+- Commit: 57f80112166f3ad0b0726161f66bdc7eacb6cdb8
+- Intended behavior: obtain Godot 4.4.1 on a GitHub-hosted runner, import/parse project headlessly, launch main scene for a smoke test, and retain logs as an artifact.
+- Verification boundary: commit status lookup returned no checks at inspection time. Workflow execution and test outcome remain unverified; do not claim CI passed.
