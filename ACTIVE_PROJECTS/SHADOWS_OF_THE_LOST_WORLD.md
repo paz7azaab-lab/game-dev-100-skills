@@ -39,3 +39,9 @@ Game source is in the dedicated game repository:
 2. Add survival state and more interactions only after the current scene parses and runs.
 3. Add animation, audio, higher-quality environment assets, responsive touch testing, and save/load.
 4. Add security/privacy, performance, regression, and Android packaging checks before release claims.
+
+
+## Automated Godot validation path
+- Added [.github/workflows/godot-validation.yml](https://github.com/paz7azaab-lab/shadows-of-the-lost-world/blob/main/.github/workflows/godot-validation.yml) in commit 57f80112166f3ad0b0726161f66bdc7eacb6cdb8.
+- It is configured to download Godot 4.4.1 in GitHub Actions, run headless editor import/script parsing, start the main scene for a short headless smoke test, and upload diagnostic logs.
+- Status is pending/not verified: no commit status checks were returned during this inspection. The workflow configuration is committed, but its successful execution has not been established.
