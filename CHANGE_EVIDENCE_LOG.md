@@ -17,17 +17,19 @@ Record changes only after the repository/tool confirms them. Keep evidence close
 - Framework repository: this repository, branch `main`
 - Task record: [ACTIVE_PROJECTS/SHADOWS_OF_THE_LOST_WORLD.md](https://github.com/paz7azaab-lab/game-dev-100-skills/blob/main/ACTIVE_PROJECTS/SHADOWS_OF_THE_LOST_WORLD.md)
 - Goal: incrementally build a third-person 3D exploration/survival game for Android in Godot 4, using selected skill areas and quality gates.
-- Baseline inspected: `README.md`, `project.godot`, `scripts/player_controller.gd`, `scenes/main.tscn` fetched from the game repository before edits.
-- Skill areas applied/planned for this milestone: 1, 4, 5, 11, 13, 15, 21, 22, 23, 27, 31, 32, 33, 41, 42, 43, 46, 47, 49, 50, 51, 52, 69, 71, 73, 75, 79, 80, 83, 84, 85, 87, 89, 90, 92, 95, 98, 99, 100.
-- Confirmed game-repo writes during this task:
-  - [scripts/forest_generator.gd](https://github.com/paz7azaab-lab/shadows-of-the-lost-world/blob/main/scripts/forest_generator.gd) — procedural primitive forest, ruin landmark, rocks, and trunk collision.
-  - [scripts/mobile_controls.gd](https://github.com/paz7azaab-lab/shadows-of-the-lost-world/blob/main/scripts/mobile_controls.gd) — on-screen directional and interaction buttons, plus E input mapping.
-  - [scripts/world_controller.gd](https://github.com/paz7azaab-lab/shadows-of-the-lost-world/blob/main/scripts/world_controller.gd) — objective HUD and relic collection interaction.
-  - [scripts/player_controller.gd](https://github.com/paz7azaab-lab/shadows-of-the-lost-world/blob/main/scripts/player_controller.gd) — third-person movement input direction correction.
-  - [scenes/main.tscn](https://github.com/paz7azaab-lab/shadows-of-the-lost-world/blob/main/scenes/main.tscn) — connected world generator, player, relic, HUD controls and environment.
-- Evidence status: GitHub connector confirmed successful commits for the listed writes. File re-fetch/static reference audit and Godot runtime checks must be recorded separately.
-- Not claimed: no Android APK, successful Godot import/run, device performance, or gameplay runtime verification has been established.
-- Follow-up: re-fetch all changed files, check scene/script paths and required node names, fix any discovered issues, then update test report with the precise outcomes.
+- Baseline inspected before edits: `README.md`, `project.godot`, `scripts/player_controller.gd`, and `scenes/main.tscn` fetched from the game repository.
+- Skill areas selected for this milestone: 1, 4, 5, 11, 13, 15, 21, 22, 23, 27, 31, 32, 33, 41, 42, 43, 46, 47, 49, 50, 51, 52, 69, 71, 73, 75, 79, 80, 83, 84, 85, 87, 89, 90, 92, 95, 98, 99, 100. Selection does not mean each skill has passed.
+- Confirmed game-repo files and latest relevant commits:
+  - [project.godot](https://github.com/paz7azaab-lab/shadows-of-the-lost-world/blob/main/project.godot) — `494bc19f81c9ec11f5df6a607b01cf304ca10475`; Godot project config and landscape-first viewport.
+  - [scenes/main.tscn](https://github.com/paz7azaab-lab/shadows-of-the-lost-world/blob/main/scenes/main.tscn) — `29a0bf6ce2555773e802b11893b73558b56ed6f4`; scene wiring.
+  - [scripts/player_controller.gd](https://github.com/paz7azaab-lab/shadows-of-the-lost-world/blob/main/scripts/player_controller.gd) — `d8a2528c11b723bad32cf9e20b1dc58a74410f61`; movement direction correction.
+  - [scripts/forest_generator.gd](https://github.com/paz7azaab-lab/shadows-of-the-lost-world/blob/main/scripts/forest_generator.gd) — `76e1016d29abbb1794641533b100b570f30e2d63`; generated trees, trunk collisions, rocks, and ruin landmark.
+  - [scripts/mobile_controls.gd](https://github.com/paz7azaab-lab/shadows-of-the-lost-world/blob/main/scripts/mobile_controls.gd) — `455a026f5f70ed7b4756c602e8bf1fcca101981d`; touch buttons and interaction input mapping.
+  - [scripts/world_controller.gd](https://github.com/paz7azaab-lab/shadows-of-the-lost-world/blob/main/scripts/world_controller.gd) — `6662cc1ac7961829a72026170708f576ee6873ea`; objective HUD and relic collection.
+- Static audit: all six active project/config/script/scene files were re-fetched from `main`. Text checks passed for configured main scene, referenced script paths, required node names, relic node lookup, and interaction action registration. This does not prove the GDScript parser or runtime passes.
+- Runtime/build status: local environment check found neither `godot` nor `godot4` executable. Godot import/parse/run, Android export, device touch tests, and performance tests are blocked/not run. No APK exists; runtime-verified = no.
+- Framework updates: task record updated in commit `549299d54609a463af17f2ee8bdb35ef3eb09bb2`; test report updated with static-audit and runtime-blocker evidence in commit `ae973ca8890ea7a3ce7ee34cb02a7285ca6393f5`.
+- Follow-up: obtain a Godot 4 runtime for parser/import and play tests; then continue with exploration, interactions, inventory, enemies, health, save/load, audio/animation, and Android packaging.
 
 ## Task record template
 
