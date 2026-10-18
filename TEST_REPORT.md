@@ -26,3 +26,10 @@
 
 ## Evidence policy
 For every actual run, record date/time, commit, command/manual steps, environment/device, expected and actual result, exit code where available, and a log/artifact link. A commit is not a runtime pass. Never mark an unrun test as passed.
+
+
+## Automated engine validation added — 2026-10-18
+- Workflow file committed to the game repository: [godot-validation.yml](https://github.com/paz7azaab-lab/shadows-of-the-lost-world/blob/main/.github/workflows/godot-validation.yml)
+- Workflow commit: 57f80112166f3ad0b0726161f66bdc7eacb6cdb8
+- Intended checks: download Godot 4.4.1, import project/parse scripts in headless editor mode, launch main scene headlessly for a short smoke test, upload logs.
+- Current result: **pending / not verified**. The GitHub connector returned no commit status checks for the workflow-file commit at the time of inspection. No successful workflow run or APK is claimed.
